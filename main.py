@@ -9,8 +9,9 @@ class MyCLI(cmd.Cmd):
         """Print a greeting."""
         print("Hello, World!")
 
-   def do_create_task 
-   
+   def do_create_task(self, line):
+       task_name = input("Name your task", )
+
     def do_quit(self, line):
         """Exit the CLI."""
         return True
