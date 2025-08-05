@@ -23,7 +23,12 @@ class MyCLI(cmd.Cmd):
         except json.JSONDecodeError:
             existing_tasks = []
         task_name = str(input("Name your task", ))
-        new_task = { "name":task_name, "status":None, "ID":None }
+        new_task = {
+           "name": task_name,
+           "staus": None,
+           "ID": new_id
+}
+        exsisting_tasks.append(new_task)
         jsonData = json.dumps(new_task)
         jsondata = [{"id": i, **d} for i, d in enumerate(jsonData)]
         print(json.dumps(jsonData, indent=4, sort_keys=False))
