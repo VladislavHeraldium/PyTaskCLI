@@ -9,8 +9,13 @@ class MyCLI(cmd.Cmd):
         """Print a greeting."""
         print("Hello, World!")
 
-   def do_create_task(self, line):
-       task_name = input("Name your task", )
+    def do_create_task(self, line):
+        task_name = str(input("Name your task", ))
+        new_task = { "name":task_name, "status":None, "ID":None }
+        jsonData = json.dumps(new_task)
+        jsonData = [{"id": i, **d} for i, d in enumerate(jsonData)]
+        print(json.dumps(jsonData, indent=4, sort_keys=False))
+
 
     def do_quit(self, line):
         """Exit the CLI."""
