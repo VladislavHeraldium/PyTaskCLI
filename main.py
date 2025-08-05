@@ -20,6 +20,8 @@ class MyCLI(cmd.Cmd):
         existing_ids = [task['ID'] for task in existing_tasks if task['ID'] is not None]
             if existing_ids:
                 new_id = max(existing_ids) + 1
+        except json.JSONDecodeError:
+            existing_tasks = []
         task_name = str(input("Name your task", ))
         new_task = { "name":task_name, "status":None, "ID":None }
         jsonData = json.dumps(new_task)
