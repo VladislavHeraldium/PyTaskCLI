@@ -1,4 +1,5 @@
 import cmd
+import os
 import json
 
 class MyCLI(cmd.Cmd):
