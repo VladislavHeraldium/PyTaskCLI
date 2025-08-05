@@ -13,7 +13,7 @@ class MyCLI(cmd.Cmd):
         task_name = str(input("Name your task", ))
         new_task = { "name":task_name, "status":None, "ID":None }
         jsonData = json.dumps(new_task)
-        jsonData = [{"id": i, **d} for i, d in enumerate(jsonData)]
+        jsondata = [{"id": i, **d} for i, d in enumerate(jsonData)]
         print(json.dumps(jsonData, indent=4, sort_keys=False))
 
 
