@@ -1,6 +1,8 @@
 import cmd
 import os
 import json
+filename = "task.json"
+new_id = 1
 
 class MyCLI(cmd.Cmd):
     prompt = '>> '
@@ -11,7 +13,7 @@ class MyCLI(cmd.Cmd):
         print("Hello, World!")
 
     def do_create_task(self, linei):
-        filename = "task.json"
+        
         task_name = str(input("Name your task", ))
         new_task = { "name":task_name, "status":None, "ID":None }
         jsonData = json.dumps(new_task)
