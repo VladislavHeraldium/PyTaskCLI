@@ -10,7 +10,8 @@ class MyCLI(cmd.Cmd):
         """Print a greeting."""
         print("Hello, World!")
 
-    def do_create_task(self, line):
+    def do_create_task(self, linei):
+        filename = "task.json"
         task_name = str(input("Name your task", ))
         new_task = { "name":task_name, "status":None, "ID":None }
         jsonData = json.dumps(new_task)
